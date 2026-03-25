@@ -1,4 +1,5 @@
 import './App.css'
+import { featuredEvents } from './data/featuredEvents'
 
 function App() {
   return (
@@ -70,6 +71,32 @@ function App() {
             eventos.
           </p>
         </article>
+      </section>
+
+      <section className="featured-section">
+        <div className="section-heading">
+          <div>
+            <p className="section-kicker">Selección destacada</p>
+            <h2>Primeros eventos en portada</h2>
+          </div>
+          <p className="section-copy">
+            Un bloque inicial de contenido para empezar a construir la
+            experiencia de descubrimiento.
+          </p>
+        </div>
+
+        <div className="featured-grid">
+          {featuredEvents.map((event) => (
+            <article className="featured-card" key={event.id}>
+              <span className="featured-category">{event.categoria}</span>
+              <h3>{event.titulo}</h3>
+              <p className="featured-meta">
+                {event.fecha} · {event.lugar}
+              </p>
+              <p className="featured-description">{event.descripcion}</p>
+            </article>
+          ))}
+        </div>
       </section>
     </main>
   )

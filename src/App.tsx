@@ -1,4 +1,5 @@
 import './App.css'
+import CollectionsSection from './components/CollectionsSection'
 import FeaturedSection from './components/FeaturedSection'
 
 function App() {
@@ -74,6 +75,7 @@ function App() {
       </section>
 
       <FeaturedSection />
+      <CollectionsSection />
     </main>
   )
 }

@@ -8,11 +8,18 @@ const categories = ['Todos', 'Concierto', 'Festival', 'Escena'] as const
 function App() {
   const [activeCategory, setActiveCategory] =
     useState<(typeof categories)[number]>('Todos')
+  const [searchTerm, setSearchTerm] = useState('')
 
-  const visibleEvents =
-    activeCategory === 'Todos'
-      ? featuredEvents
-      : featuredEvents.filter((event) => event.categoria === activeCategory)
+  const visibleEvents = featuredEvents.filter((event) => {
+    const matchesCategory =
+      activeCategory === 'Todos' || event.categoria === activeCategory
+
+    const searchableText =
+      `${event.titulo} ${event.lugar} ${event.descripcion}`.toLowerCase()
+    const matchesSearch = searchableText.includes(searchTerm.toLowerCase())
+
+    return matchesCategory && matchesSearch
+  })
 
   return (
     <main className="app-shell">
@@ -97,7 +104,21 @@ function App() {
           </p>
         </div>
 
-        <div className="filter-row" aria-label="Filtrar eventos destacados por categoría">
+        <div className="search-box">
+          <label htmlFor="event-search">Buscar por título, lugar o descripción</label>
+          <input
+            id="event-search"
+            type="text"
+            placeholder="Ejemplo: puerto, Colón o música"
+            value={searchTerm}
+            onChange={(event) => setSearchTerm(event.target.value)}
+          />
+        </div>
+
+        <div
+          className="filter-row"
+          aria-label="Filtrar eventos destacados por categoría"
+        >
           {categories.map((category) => (
             <button
               key={category}
@@ -113,9 +134,16 @@ function App() {
         </div>
 
         <div className="featured-grid">
-          {visibleEvents.map((event) => (
-            <FeaturedEventCard key={event.id} event={event} />
-          ))}
+          {visibleEvents.length > 0 ? (
+            visibleEvents.map((event) => (
+              <FeaturedEventCard key={event.id} event={event} />
+            ))
+          ) : (
+            <article className="empty-state">
+              <h3>Sin resultados</h3>
+              <p>Prueba otra búsqueda o cambia la categoría activa.</p>
+            </article>
+          )}
         </div>
       </section>
     </main>

@@ -1,4 +1,5 @@
 import './App.css'
+import FeaturedEventCard from './components/FeaturedEventCard'
 import { featuredEvents } from './data/featuredEvents'
 
 function App() {
@@ -87,14 +88,7 @@ function App() {
 
         <div className="featured-grid">
           {featuredEvents.map((event) => (
-            <article className="featured-card" key={event.id}>
-              <span className="featured-category">{event.categoria}</span>
-              <h3>{event.titulo}</h3>
-              <p className="featured-meta">
-                {event.fecha} · {event.lugar}
-              </p>
-              <p className="featured-description">{event.descripcion}</p>
-            </article>
+            <FeaturedEventCard key={event.id} event={event} />
           ))}
         </div>
       </section>

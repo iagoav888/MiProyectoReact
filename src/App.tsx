@@ -1,8 +1,19 @@
+import { useState } from 'react'
 import './App.css'
 import FeaturedEventCard from './components/FeaturedEventCard'
 import { featuredEvents } from './data/featuredEvents'
 
+const categories = ['Todos', 'Concierto', 'Festival', 'Escena'] as const
+
 function App() {
+  const [activeCategory, setActiveCategory] =
+    useState<(typeof categories)[number]>('Todos')
+
+  const visibleEvents =
+    activeCategory === 'Todos'
+      ? featuredEvents
+      : featuredEvents.filter((event) => event.categoria === activeCategory)
+
   return (
     <main className="app-shell">
       <header className="topbar">
@@ -86,8 +97,23 @@ function App() {
           </p>
         </div>
 
+        <div className="filter-row" aria-label="Filtrar eventos destacados por categoría">
+          {categories.map((category) => (
+            <button
+              key={category}
+              className={
+                activeCategory === category ? 'filter-chip active' : 'filter-chip'
+              }
+              onClick={() => setActiveCategory(category)}
+              type="button"
+            >
+              {category}
+            </button>
+          ))}
+        </div>
+
         <div className="featured-grid">
-          {featuredEvents.map((event) => (
+          {visibleEvents.map((event) => (
             <FeaturedEventCard key={event.id} event={event} />
           ))}
         </div>

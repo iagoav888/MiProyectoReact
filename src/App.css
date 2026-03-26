@@ -228,6 +228,35 @@
   color: #94a3b8;
 }
 
+.filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.filter-chip {
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  border-radius: 999px;
+  padding: 10px 14px;
+  background: rgba(2, 6, 23, 0.28);
+  color: #cbd5e1;
+  font: inherit;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.filter-chip.active {
+  border-color: rgba(56, 189, 248, 0.35);
+  background: rgba(56, 189, 248, 0.16);
+  color: #e0f2fe;
+}
+
+.filter-chip:hover {
+  border-color: rgba(56, 189, 248, 0.24);
+}
+
 .featured-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -297,5 +326,9 @@
 
   .featured-grid {
     grid-template-columns: 1fr;
+  }
+
+  .filter-row {
+    gap: 10px;
   }
 }

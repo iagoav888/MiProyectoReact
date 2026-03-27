@@ -1,5 +1,6 @@
 import './App.css'
 import CollectionsSection from './components/CollectionsSection'
+import CtaSection from './components/CtaSection'
 import FeaturedSection from './components/FeaturedSection'
 import HeroOverviewSection from './components/HeroOverviewSection'
 import VenuesSection from './components/VenuesSection'
@@ -23,6 +24,7 @@ function App() {
       <FeaturedSection />
       <CollectionsSection />
       <VenuesSection />
+      <CtaSection />
     </main>
   )
 }

@@ -390,6 +390,51 @@
   color: #94a3b8;
 }
 
+.venues-section {
+  margin-top: 22px;
+  padding: 28px;
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  border-radius: 28px;
+  background:
+    linear-gradient(180deg, rgba(37, 99, 235, 0.08), transparent 45%),
+    rgba(15, 23, 42, 0.6);
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.16);
+}
+
+.venues-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.venue-card {
+  padding: 24px;
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  border-radius: 22px;
+  background: rgba(2, 6, 23, 0.28);
+}
+
+.venue-zone {
+  display: inline-flex;
+  margin-bottom: 14px;
+  padding: 7px 11px;
+  border-radius: 999px;
+  background: rgba(14, 165, 233, 0.14);
+  color: #bae6fd;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.venue-card h3 {
+  margin: 0 0 10px;
+  font-size: 1.2rem;
+}
+
+.venue-card p {
+  margin: 0;
+  color: #94a3b8;
+}
+
 @media (max-width: 640px) {
   .app-shell {
     width: min(100% - 20px, 1100px);
@@ -422,6 +467,10 @@
   }
 
   .collections-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .venues-grid {
     grid-template-columns: 1fr;
   }
 

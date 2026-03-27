@@ -1,6 +1,7 @@
 import './App.css'
 import CollectionsSection from './components/CollectionsSection'
 import FeaturedSection from './components/FeaturedSection'
+import VenuesSection from './components/VenuesSection'
 
 function App() {
   return (
@@ -76,6 +77,7 @@ function App() {
 
       <FeaturedSection />
       <CollectionsSection />
+      <VenuesSection />
     </main>
   )
 }

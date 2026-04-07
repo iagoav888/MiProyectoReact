@@ -531,59 +531,124 @@
   font-size: 0.95rem;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 980px) {
   .app-shell {
-    width: min(100% - 20px, 1100px);
-    padding: 24px 0 40px;
-  }
-
-  .topbar,
-  .hero {
-    grid-template-columns: 1fr;
-    padding: 28px 22px;
-    border-radius: 22px;
+    width: min(100% - 28px, 1100px);
+    padding: 40px 0 56px;
   }
 
   .topbar {
-    flex-direction: column;
-    align-items: stretch;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: start;
   }
 
   .topnav {
     justify-content: flex-start;
   }
 
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 36px;
+  }
+
+  .overview {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .featured-grid,
+  .collections-grid,
+  .venues-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .featured-summary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .section-heading,
+  .cta-section {
+    align-items: stretch;
+  }
+}
+
+@media (max-width: 760px) {
+  .app-shell {
+    width: min(100% - 22px, 1100px);
+    padding: 24px 0 40px;
+  }
+
+  .topbar,
+  .hero,
+  .featured-section,
+  .collections-section,
+  .venues-section,
+  .cta-section {
+    padding: 24px 20px;
+    border-radius: 22px;
+  }
+
+  .brand {
+    align-items: flex-start;
+  }
+
+  .topnav {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .topnav a {
+    text-align: center;
+  }
+
   .overview {
     grid-template-columns: 1fr;
   }
 
+  .featured-grid,
+  .collections-grid,
+  .venues-grid,
+  .featured-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-actions,
+  .cta-actions {
+    align-items: stretch;
+  }
+
+  .primary-link {
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
   .section-heading {
     flex-direction: column;
     align-items: stretch;
   }
 
-  .featured-grid {
+  .hero h1,
+  .cta-copy h2 {
+    max-width: 12ch;
+  }
+
+  .topnav {
     grid-template-columns: 1fr;
   }
 
-  .featured-summary {
-    grid-template-columns: 1fr;
-  }
-
-  .collections-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .venues-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .cta-section {
-    flex-direction: column;
-    align-items: stretch;
+  .brand-mark {
+    width: 40px;
+    height: 40px;
   }
 
   .filter-row {
     gap: 10px;
+  }
+
+  .filter-chip {
+    flex: 1 1 calc(50% - 10px);
+    text-align: center;
   }
 }

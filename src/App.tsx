@@ -17,6 +17,13 @@ function App() {
           </div>
         </div>
 
+        <nav className="topnav" aria-label="Secciones principales">
+          <a href="#overview">Inicio</a>
+          <a href="#featured">Eventos</a>
+          <a href="#collections">Colecciones</a>
+          <a href="#venues">Espacios</a>
+        </nav>
+
         <span className="status-badge">Selección local</span>
       </header>
 

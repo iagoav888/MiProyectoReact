@@ -2,7 +2,7 @@ import { curatedCollections } from '../data/curatedCollections'
 
 function CollectionsSection() {
   return (
-    <section className="collections-section">
+    <section className="collections-section" id="collections">
       <div className="section-heading">
         <div>
           <p className="section-kicker">Colecciones</p>

@@ -17,6 +17,30 @@
   box-shadow: 0 14px 36px rgba(15, 23, 42, 0.16);
 }
 
+.topnav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.topnav a {
+  padding: 10px 14px;
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  border-radius: 999px;
+  color: #cbd5e1;
+  font-size: 0.92rem;
+  font-weight: 600;
+  transition: border-color 0.2s ease, color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.topnav a:hover {
+  color: #e0f2fe;
+  border-color: rgba(56, 189, 248, 0.24);
+  background: rgba(56, 189, 248, 0.1);
+}
+
 .brand {
   display: flex;
   align-items: center;
@@ -493,6 +517,10 @@
   .topbar {
     flex-direction: column;
     align-items: stretch;
+  }
+
+  .topnav {
+    justify-content: flex-start;
   }
 
   .overview {

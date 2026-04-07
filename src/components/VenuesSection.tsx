@@ -2,7 +2,7 @@ import { featuredVenues } from '../data/featuredVenues'
 
 function VenuesSection() {
   return (
-    <section className="venues-section">
+    <section className="venues-section" id="venues">
       <div className="section-heading">
         <div>
           <p className="section-kicker">Espacios</p>

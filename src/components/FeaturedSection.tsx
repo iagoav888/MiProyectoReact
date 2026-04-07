@@ -21,7 +21,7 @@ function FeaturedSection() {
   })
 
   return (
-    <section className="featured-section">
+    <section className="featured-section" id="featured">
       <div className="section-heading">
         <div>
           <p className="section-kicker">Selección destacada</p>

@@ -1,73 +1,83 @@
-# React + TypeScript + Vite
+# Coruña Vibra
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Coruña Vibra es una propuesta de interfaz para explorar planes culturales en A Coruña. El proyecto está desarrollado con React y plantea una home editorial con secciones de eventos destacados, colecciones temáticas, espacios relevantes y navegación interna.
 
-Currently, two official plugins are available:
+## Objetivo del proyecto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+El objetivo de este proyecto es construir una aplicación frontend con una base visual cuidada, una estructura de componentes clara y una experiencia de navegación sencilla. Está planteado como un proyecto de iniciación en React con enfoque de portfolio, buscando equilibrio entre diseño, organización del código y progresión funcional.
 
-## React Compiler
+## Tecnologías utilizadas
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React
+- TypeScript
+- Vite
+- CSS
 
-## Expanding the ESLint configuration
+## Funcionalidades actuales
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Home estructurada en varias secciones
+- Navegación interna entre bloques de contenido
+- Sección de eventos destacados
+- Filtro por categoría
+- Búsqueda por texto en eventos
+- Resumen visual del estado de filtros
+- Sección editorial de colecciones
+- Sección de espacios destacados
+- Bloque final de llamada a la acción
+- Diseño responsive para desktop, tablet y móvil
+- Mejora de estados interactivos y foco visible
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Estructura del proyecto
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+src/
+  components/
+    CollectionsSection.tsx
+    CtaSection.tsx
+    FeaturedEventCard.tsx
+    FeaturedSection.tsx
+    HeroOverviewSection.tsx
+    VenuesSection.tsx
+  data/
+    curatedCollections.ts
+    featuredEvents.ts
+    featuredVenues.ts
+  App.tsx
+  App.css
+  main.tsx
+  index.css
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Cómo ejecutar el proyecto
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+1. Instala las dependencias:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
 ```
+
+2. Inicia el servidor de desarrollo:
+
+```bash
+npm run dev
+```
+
+3. Abre en el navegador la URL que indique Vite, normalmente:
+
+```bash
+http://localhost:5173/
+```
+
+## Posibles siguientes mejoras
+
+- Añadir datos reales desde una API o fuente externa
+- Incorporar páginas o rutas internas
+- Permitir guardar favoritos
+- Mejorar accesibilidad semántica y navegación por teclado
+- Añadir tests de componentes
+- Incorporar animaciones más refinadas
+- Crear una vista detallada para eventos o espacios
+
+## Autor
+
+Proyecto desarrollado por Iago como práctica de frontend con React, orientado a seguir creciendo en diseño de interfaces, organización de componentes y desarrollo web moderno.

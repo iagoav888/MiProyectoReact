@@ -62,6 +62,21 @@ function FeaturedSection() {
         ))}
       </div>
 
+      <div className="featured-summary">
+        <div className="summary-card">
+          <span className="summary-label">Resultados</span>
+          <strong>{visibleEvents.length}</strong>
+        </div>
+        <div className="summary-card">
+          <span className="summary-label">Categoría activa</span>
+          <strong>{activeCategory}</strong>
+        </div>
+        <div className="summary-card">
+          <span className="summary-label">Búsqueda</span>
+          <strong>{searchTerm ? `"${searchTerm}"` : 'Sin filtro'}</strong>
+        </div>
+      </div>
+
       <div className="featured-grid">
         {visibleEvents.length > 0 ? (
           visibleEvents.map((event) => (
